@@ -9,14 +9,17 @@ class Caregivers:
     self.hours = 0 # care is required 12 hours per day, 7 days a week (84 hours)
     self.schedule = {}
 
+  #availability = ["preferred", "available", "unavailable"]
+  def get_schedule(self):
+    return self.schedule
+
   def set_schedule(self, shift, availability):
-    # each caregiver should have their own availability schedule where they can indicate their availability for each shift
-    # availability categories are 'preferred', 'available' (default), and 'unavailable'
-    # indicates AM or PM shifts
     self.schedule[shift] = availability
 
-  def get_schedule(self, shift, availability):
-    return self.set_schedule
+  def update_schedule(self):
+    for shift, availability in self.schedule.items():
+      print(f"{shift}: {availability}")
+
 
 
   
